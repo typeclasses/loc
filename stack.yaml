@@ -1,47 +1,8 @@
-resolver: lts-9.0
+resolver: lts-9.1
 
 packages:
-  - accumulate
-  - acme-truthy
-  - alternating-characters
-  - atomic-modify
-  - bad-twenty-four
-  - clock-app
-  - data-forest
-  - decimal-text
-  - elephant
-  - encodings
-  - equivalent
-  - exception-records
-  - exponent-dag
-  - fizzbuzz-as-a-service
-  - gadt-constraint-record-example
-  - human-parse
-  - human-text
-  - irs-forms
   - loc
   - loc-test
-  - list-monoids
-  - mvar-lock
-  - non-threaded-fork-failure
-  - num-qq
-  - partial-ord
-  - power-of-two
-  - tchan-log-demo
 
 extra-deps:
   - hedgehog-0.5
-  - X11-extras-0.4
-
-nix:
-  packages:
-    - cairo
-    - glib
-    - gtk3
-    - pango
-    - pkgconfig
-    - xorg.libX11
-    - xorg.libXext
-    - xorg.libXrandr
-    - xorg.xproto
-    - zlib
