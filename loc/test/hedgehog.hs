@@ -7,6 +7,7 @@ import qualified Data.Loc.Area as Area
 import qualified Data.Loc.Span as Span
 
 import Hedgehog
+import System.IO (hSetEncoding, stdout, stderr, utf8)
 
 import qualified Data.List as List
 import qualified Hedgehog.Gen as Gen
@@ -15,6 +16,8 @@ import qualified Test.Loc.Hedgehog.Gen as Gen
 
 main :: IO ()
 main =
+  hSetEncoding stdout utf8 *>
+  hSetEncoding stderr utf8 *>
   checkParallel $$(discover) >>= \ok ->
   when (not ok) exitFailure
 
