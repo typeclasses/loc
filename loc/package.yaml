@@ -31,7 +31,7 @@ library:
 author:     Chris Martin <ch.martin@gmail.com>
 maintainer: Chris Martin <ch.martin@gmail.com>
 
-homepage: https://github.com/chris-martin/haskell-libraries
+homepage: https://github.com/chris-martin/loc
 
 license:      Apache-2.0
 license-file: license.txt
