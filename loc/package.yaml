@@ -1,5 +1,5 @@
 name: loc
-version: 0.1.3.1
+version: 0.1.3.2
 category: Data Structures
 
 synopsis: |
@@ -37,7 +37,7 @@ license:      Apache-2.0
 license-file: license.txt
 
 dependencies:
-  - base >= 4.9 && < 4.10
+  - base >= 4.9 && < 4.11
   - containers
 
 ghc-options:
@@ -56,14 +56,17 @@ tests:
     ghc-options:
       - -threaded
   hedgehog:
-    source-dirs: test
+    source-dirs:
+      - test
+      - loc-test-src
     main: hedgehog.hs
     dependencies:
       - hedgehog
       - loc
-      - loc-test
     ghc-options:
       - -threaded
+    other-modules:
+      Test.Loc.Hedgehog.Gen
 
 extra-source-files:
   - README.md
