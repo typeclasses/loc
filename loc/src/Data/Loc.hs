@@ -53,7 +53,7 @@ import qualified Data.Loc.Span as Span
 {- |
 The smallest location: @'loc' 1 1@.
 
-/This is an alias for 'Loc.origin'./
+/This is an alias for 'Loc.loc'./
 -}
 origin :: Loc
 origin = Loc.origin
@@ -61,7 +61,7 @@ origin = Loc.origin
 {- |
 Create a 'Loc' from a line number and column number.
 
-/This is an alias for 'Loc.loc'./
+/This is an alias for 'Loc.origin'./
 -}
 loc :: Line -> Column -> Loc
 loc = Loc.loc
