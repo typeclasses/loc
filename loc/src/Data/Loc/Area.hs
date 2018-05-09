@@ -73,6 +73,8 @@ instance Monoid Area
 
 -- | '<>' = '+'
 instance Semigroup Area
+  where
+    (<>) = (+)
 
 areaShowsPrec :: Int -> Area -> ShowS
 areaShowsPrec _ a =
