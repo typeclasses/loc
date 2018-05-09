@@ -5,6 +5,7 @@ env:
     - LC_ALL=en_US.UTF-8
   matrix:
     - STACK_YAML=stack-lts-9.yaml
+    - STACK_YAML=stack-lts-11.yaml
     - STACK_YAML=stack-nightly.yaml
 
 cache:
