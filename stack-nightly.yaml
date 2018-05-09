@@ -1,8 +1,5 @@
-resolver: nightly-2017-10-20
+resolver: nightly-2018-05-06
 
 packages:
   - loc
   - loc-test
-
-extra-deps:
-  - hedgehog-0.5
