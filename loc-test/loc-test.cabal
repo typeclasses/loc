@@ -25,7 +25,7 @@ library
   default-extensions: NoImplicitPrelude
   ghc-options: -Wall
   build-depends:
-      base >=4.9 && <4.11
+      base >=4.9 && <4.12
     , containers
     , hedgehog
     , loc

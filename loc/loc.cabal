@@ -34,7 +34,7 @@ library
   default-extensions: NoImplicitPrelude
   ghc-options: -Wall
   build-depends:
-      base >=4.9 && <4.11
+      base >=4.9 && <4.12
     , containers
   exposed-modules:
       Data.Loc
@@ -57,7 +57,7 @@ test-suite doctest
   default-extensions: NoImplicitPrelude
   ghc-options: -Wall -threaded
   build-depends:
-      base >=4.9 && <4.11
+      base >=4.9 && <4.12
     , containers
     , doctest
     , loc
@@ -70,7 +70,7 @@ test-suite hedgehog
   default-extensions: NoImplicitPrelude
   ghc-options: -Wall -threaded
   build-depends:
-      base >=4.9 && <4.11
+      base >=4.9 && <4.12
     , containers
     , hedgehog
     , loc
