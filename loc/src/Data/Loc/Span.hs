@@ -117,7 +117,7 @@ fromTo a b =
 {- |
 
 Attempt to construct a 'Span' from two 'Loc's. The lesser loc will be the
-start, and the greater loc will be the end. If the two locs are not equal,
+start, and the greater loc will be the end. If the two locs are equal,
 the result is 'Nothing', because a span cannot be empty.
 
 /This is the safe version of 'fromTo', which throws an exception instead./
