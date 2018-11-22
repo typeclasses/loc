@@ -23,6 +23,11 @@ license-file: license.txt
 build-type: Simple
 cabal-version: >= 1.10
 
+tested-with:
+    GHC == 8.0.2
+  , GHC == 8.2.2
+  , GHC == 8.4.3
+
 extra-source-files:
     example.png
     example.svg
