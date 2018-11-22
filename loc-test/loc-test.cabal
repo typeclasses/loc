@@ -23,6 +23,7 @@ tested-with:
     GHC == 8.0.2
   , GHC == 8.2.2
   , GHC == 8.4.3
+  , GHC == 8.6.1
 
 library
   default-language: Haskell2010
@@ -30,7 +31,7 @@ library
   default-extensions: NoImplicitPrelude
   ghc-options: -Wall
   build-depends:
-      base >=4.9 && <4.12
+      base >=4.9 && <4.13
     , containers
     , hedgehog
     , loc

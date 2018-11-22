@@ -27,6 +27,7 @@ tested-with:
     GHC == 8.0.2
   , GHC == 8.2.2
   , GHC == 8.4.3
+  , GHC == 8.6.1
 
 extra-source-files:
     example.png
@@ -39,7 +40,7 @@ library
   default-extensions: NoImplicitPrelude
   ghc-options: -Wall
   build-depends:
-      base >=4.9 && <4.12
+      base >=4.9 && <4.13
     , containers
   exposed-modules:
       Data.Loc
@@ -62,7 +63,7 @@ test-suite doctest
   default-extensions: NoImplicitPrelude
   ghc-options: -Wall -threaded
   build-depends:
-      base >=4.9 && <4.12
+      base >=4.9 && <4.13
     , containers
     , doctest
     , loc
@@ -75,7 +76,7 @@ test-suite hedgehog
   default-extensions: NoImplicitPrelude
   ghc-options: -Wall -threaded
   build-depends:
-      base >=4.9 && <4.12
+      base >=4.9 && <4.13
     , containers
     , hedgehog
     , loc
