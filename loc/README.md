@@ -7,6 +7,7 @@ Overview of the concepts:
 * `Loc` - a cursor position, starting at the origin `1:1`
 * `Span` - a nonempty contiguous region between two locs
 * `Area` - a set of zero or more spans with gaps between them
+* `Doc` - ...
 
 See also:
 
