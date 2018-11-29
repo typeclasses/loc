@@ -42,6 +42,7 @@ library
   build-depends:
       base >=4.9 && <4.13
     , containers
+    , ListLike
   exposed-modules:
       Data.Loc
       Data.Loc.Area

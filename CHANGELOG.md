@@ -6,6 +6,8 @@ and this project adheres to the [Haskell Package Versioning Policy](https://pvp.
 
 ## [Unreleased]
 ### Added
-- ...
+- Dependency on [ListLike] package
 
 [Unreleased]: https://github.com/chris-martin/loc/compare/0.1.3.4...HEAD
+
+[ListLike]: https://hackage.haskell.org/package/ListLike
