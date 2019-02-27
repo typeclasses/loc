@@ -18,7 +18,7 @@ main :: IO ()
 main =
   hSetEncoding stdout utf8 *>
   hSetEncoding stderr utf8 *>
-  checkParallel $$(discover) >>= \ok ->
+  checkParallel $$discover >>= \ok ->
   when (not ok) exitFailure
 
 prop_Span_add_mempty :: Property

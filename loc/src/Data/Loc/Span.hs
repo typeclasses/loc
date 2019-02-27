@@ -28,12 +28,11 @@ module Data.Loc.Span
   ) where
 
 import Data.Loc.Internal.Prelude
-import Data.Loc.Loc (locReadPrec, locShowsPrec)
 
 import Data.Loc.Exception (LocException (..))
 import Data.Loc.List.OneToTwo (OneToTwo)
 import Data.Loc.List.ZeroToTwo (ZeroToTwo)
-import Data.Loc.Loc (Loc)
+import Data.Loc.Loc (Loc, locReadPrec, locShowsPrec)
 import Data.Loc.Pos (Line)
 
 import qualified Data.Loc.List.OneToTwo as OneToTwo
@@ -112,7 +111,7 @@ or else this throws 'EmptySpan'.
 -}
 fromTo :: Loc -> Loc -> Span
 fromTo a b =
-  maybe (throw EmptySpan) id (fromToMay a b)
+  fromMaybe (throw EmptySpan) (fromToMay a b)
 
 {- |
 
