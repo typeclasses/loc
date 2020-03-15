@@ -3,6 +3,10 @@
 
 The change log was not maintained before this point.
 
+0.1.3.6 - 2020 Mar 15
+
+  - Support GHC 8.8
+
 0.1.3.4 - 2018 Nov 22
 
 0.1.3.3 - 2018 Aug 23
