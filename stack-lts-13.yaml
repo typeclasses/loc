@@ -1,4 +1,4 @@
-resolver: lts-13.9
+resolver: lts-15.2
 
 packages:
   - loc

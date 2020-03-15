@@ -24,6 +24,7 @@ tested-with:
   , GHC == 8.2.2
   , GHC == 8.4.3
   , GHC == 8.6.3
+  , GHC == 8.8.1
 
 extra-source-files:
     changelog.md
@@ -33,10 +34,7 @@ library
   hs-source-dirs: src
   default-extensions: NoImplicitPrelude
   ghc-options: -Wall
-  build-depends:
-      base >=4.9 && <4.13
-    , containers
-    , hedgehog
-    , loc
-  exposed-modules:
-      Test.Loc.Hedgehog.Gen
+  build-depends: base, containers, hedgehog, loc
+  build-depends: base >= 4.9
+  build-depends: base < 4.14
+  exposed-modules: Test.Loc.Hedgehog.Gen

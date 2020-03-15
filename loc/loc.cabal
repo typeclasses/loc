@@ -28,6 +28,7 @@ tested-with:
   , GHC == 8.2.2
   , GHC == 8.4.3
   , GHC == 8.6.3
+  , GHC == 8.8.1
 
 extra-source-files:
     example.png
@@ -40,9 +41,9 @@ library
   hs-source-dirs: src
   default-extensions: NoImplicitPrelude
   ghc-options: -Wall
-  build-depends:
-      base >=4.9 && <4.13
-    , containers
+  build-depends: base, containers
+  build-depends: base >= 4.9
+  build-depends: base < 4.14
   exposed-modules:
       Data.Loc
       Data.Loc.Area
@@ -63,11 +64,9 @@ test-suite doctest
   hs-source-dirs: test
   default-extensions: NoImplicitPrelude
   ghc-options: -Wall -threaded
-  build-depends:
-      base >=4.9 && <4.13
-    , containers
-    , doctest
-    , loc
+  build-depends: base, containers, doctest, loc
+  build-depends: base >= 4.9
+  build-depends: base < 4.14
 
 test-suite hedgehog
   default-language: Haskell2010
@@ -76,10 +75,7 @@ test-suite hedgehog
   hs-source-dirs: test loc-test-src
   default-extensions: NoImplicitPrelude
   ghc-options: -Wall -threaded
-  build-depends:
-      base >=4.9 && <4.13
-    , containers
-    , hedgehog
-    , loc
-  other-modules:
-      Test.Loc.Hedgehog.Gen
+  build-depends: base, containers, hedgehog, loc
+  build-depends: base >= 4.9
+  build-depends: base < 4.14
+  other-modules: Test.Loc.Hedgehog.Gen
