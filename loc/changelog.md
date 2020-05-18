@@ -1,6 +1,10 @@
 
 ---
 
+0.1.3.8 - 2020 May 20
+
+  - Support GHC 8.10
+
 The change log was not maintained before this point.
 
 0.1.3.6 - 2020 Mar 15

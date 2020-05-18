@@ -1,5 +1,5 @@
 name: loc-test
-version: 0.1.3.6
+version: 0.1.3.8
 
 synopsis: Test-related utilities related to the /loc/ package.
 
@@ -25,6 +25,7 @@ tested-with:
   , GHC == 8.4.3
   , GHC == 8.6.3
   , GHC == 8.8.1
+  , GHC == 8.10.1
 
 extra-source-files:
     changelog.md
@@ -36,5 +37,5 @@ library
   ghc-options: -Wall
   build-depends: base, containers, hedgehog, loc
   build-depends: base >= 4.9
-  build-depends: base < 4.14
+  build-depends: base < 4.15
   exposed-modules: Test.Loc.Hedgehog.Gen

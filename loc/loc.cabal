@@ -1,5 +1,5 @@
 name: loc
-version: 0.1.3.6
+version: 0.1.3.8
 
 synopsis: Types representing line and column positions and ranges in text files.
 
@@ -29,6 +29,7 @@ tested-with:
   , GHC == 8.4.3
   , GHC == 8.6.3
   , GHC == 8.8.1
+  , GHC == 8.10.1
 
 extra-source-files:
     example.png
@@ -43,7 +44,7 @@ library
   ghc-options: -Wall
   build-depends: base, containers
   build-depends: base >= 4.9
-  build-depends: base < 4.14
+  build-depends: base < 4.15
   exposed-modules:
       Data.Loc
       Data.Loc.Area
@@ -66,7 +67,7 @@ test-suite doctest
   ghc-options: -Wall -threaded
   build-depends: base, containers, doctest, loc
   build-depends: base >= 4.9
-  build-depends: base < 4.14
+  build-depends: base < 4.15
 
 test-suite hedgehog
   default-language: Haskell2010
@@ -77,5 +78,5 @@ test-suite hedgehog
   ghc-options: -Wall -threaded
   build-depends: base, containers, hedgehog, loc
   build-depends: base >= 4.9
-  build-depends: base < 4.14
+  build-depends: base < 4.15
   other-modules: Test.Loc.Hedgehog.Gen
