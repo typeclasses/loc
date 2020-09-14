@@ -1,3 +1,4 @@
+{-# LANGUAGE DeriveDataTypeable #-}
 {-# LANGUAGE GeneralizedNewtypeDeriving #-}
 
 module Data.Loc.Pos
@@ -16,6 +17,8 @@ import Data.Loc.Internal.Prelude
 
 import Prelude (Num (..))
 
+import Data.Data (Data)
+
 {- |
 
 'Pos' stands for /positive integer/. You can also think of it as /position/,
@@ -28,7 +31,7 @@ way to implement 'quotRem'.
 
 -}
 newtype Pos = Pos Natural
-  deriving (Eq, Ord)
+  deriving (Data, Eq, Ord)
 
 instance ToNat Pos
   where
@@ -171,7 +174,7 @@ class ToNat a
 --------------------------------------------------------------------------------
 
 newtype Line = Line Pos
-  deriving (Eq, Ord, Num, Real, Enum, ToNat)
+  deriving (Data, Eq, Ord, Num, Real, Enum, ToNat)
 
 instance Show Line
   where
@@ -189,7 +192,7 @@ instance Read Line
 --------------------------------------------------------------------------------
 
 newtype Column = Column Pos
-  deriving (Eq, Ord, Num, Real, Enum, ToNat)
+  deriving (Data, Eq, Ord, Num, Real, Enum, ToNat)
 
 instance Show Column
   where

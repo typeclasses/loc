@@ -1,3 +1,4 @@
+{-# LANGUAGE DeriveDataTypeable #-}
 {-# LANGUAGE ScopedTypeVariables #-}
 
 module Data.Loc.Area
@@ -35,11 +36,12 @@ import Data.Loc.Span (Span)
 import qualified Data.Loc.Internal.Map as Map
 import qualified Data.Loc.Span as Span
 
+import           Data.Data (Data)
 import qualified Data.Foldable as Foldable
 import qualified Data.Set as Set
 
 data Terminus = Start | End
-  deriving (Eq, Ord)
+  deriving (Data, Eq, Ord)
 
 {- |
 
@@ -50,7 +52,7 @@ Construct and combine areas using 'mempty', 'spanArea', 'fromTo', '+', and '-'.
 
 -}
 newtype Area = Area (Map Loc Terminus)
-  deriving (Eq, Ord)
+  deriving (Data, Eq, Ord)
 
 -- | 'showsPrec' = 'areaShowsPrec'
 instance Show Area

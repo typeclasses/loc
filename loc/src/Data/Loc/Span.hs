@@ -1,3 +1,4 @@
+{-# LANGUAGE DeriveDataTypeable #-}
 {-# LANGUAGE LambdaCase #-}
 
 module Data.Loc.Span
@@ -39,6 +40,7 @@ import qualified Data.Loc.List.OneToTwo as OneToTwo
 import qualified Data.Loc.List.ZeroToTwo as ZeroToTwo
 import qualified Data.Loc.Loc as Loc
 
+import           Data.Data (Data)
 import qualified Data.Foldable as Foldable
 import qualified Data.List.NonEmpty as NonEmpty
 
@@ -54,7 +56,7 @@ Construct and combine spans using 'fromTo', 'fromToMay', '+', and '-'.
 data Span = Span
   { start :: Loc
   , end   :: Loc
-  } deriving (Eq, Ord)
+  } deriving (Data, Eq, Ord)
 
 -- | 'showsPrec' = 'spanShowsPrec'
 instance Show Span
