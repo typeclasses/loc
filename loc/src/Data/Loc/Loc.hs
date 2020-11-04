@@ -1,3 +1,5 @@
+{-# LANGUAGE DeriveDataTypeable #-}
+
 module Data.Loc.Loc
   ( Loc
 
@@ -19,6 +21,8 @@ import Data.Loc.Pos (Column, Line)
 
 import Data.Loc.Internal.Prelude
 
+import Data.Data (Data)
+
 {- |
 
 Stands for /location/. Consists of a 'Line' and a 'Column'. You can think of a
@@ -30,7 +34,7 @@ data Loc = Loc
   { line   :: Line
   , column :: Column
   }
-  deriving (Eq, Ord)
+  deriving (Data, Eq, Ord)
 
 -- | 'showsPrec' = 'locShowsPrec'
 instance Show Loc
