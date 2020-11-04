@@ -1,6 +1,16 @@
 
 ---
 
+0.1.3.10 - 2020 Nov 4
+
+  - Added `Data` instances for:
+      - `Area`
+      - `Loc`
+      - `Pos`
+      - `Line`
+      - `Column`
+      - `Span`
+
 0.1.3.8 - 2020 May 20
 
   - Support GHC 8.10
