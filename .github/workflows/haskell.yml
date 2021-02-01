@@ -1,0 +1,28 @@
+on: [push]
+
+name: CI for 'loc' and related libraries
+
+jobs:
+  build:
+    name: Build and test all the packages
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        ghc:
+          - '8.10.1'
+          - '8.8.1'
+          - '8.6.3'
+          - '8.4.3'
+          - '8.2.2'
+          - '8.0.2'
+
+    steps:
+      - uses: actions/checkout@v2
+      - uses: haskell/actions/setup@v1
+        with:
+          ghc-version: ${{ matrix.ghc }}
+      - name: Build the packages
+        run: cabal build all
+      - name: Test the packages
+        run: cabal test all
