@@ -12,6 +12,10 @@ module Data.Loc.SpanOrLoc
   -- * Deconstructing
   , spanOrLoc
 
+  -- * Querying
+  , start
+  , end
+
   ) where
 
 import Data.Loc.Internal.Prelude
@@ -64,3 +68,9 @@ the lesser loc will be the start, and the greater loc will be the end.
 fromTo :: Loc -> Loc -> SpanOrLoc
 fromTo a b =
   maybe (Loc a) Span (Span.fromToMay a b)
+
+start :: SpanOrLoc -> Loc
+start = spanOrLoc Span.start id
+
+end :: SpanOrLoc -> Loc
+end = spanOrLoc Span.end id
