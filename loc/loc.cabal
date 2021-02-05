@@ -57,6 +57,7 @@ library
       Data.Loc.Loc
       Data.Loc.Pos
       Data.Loc.Span
+      Data.Loc.SpanOrLoc
       Data.Loc.Types
 
 test-suite doctest
