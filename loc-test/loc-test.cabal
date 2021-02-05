@@ -38,4 +38,6 @@ library
   build-depends: base, containers, hedgehog, loc
   build-depends: base >= 4.9
   build-depends: base < 4.15
+  build-depends: containers >= 0.5.7.1
+  build-depends: containers < 0.7
   exposed-modules: Test.Loc.Hedgehog.Gen

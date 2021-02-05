@@ -45,6 +45,8 @@ library
   build-depends: base, containers
   build-depends: base >= 4.9
   build-depends: base < 4.15
+  build-depends: containers >= 0.5.7.1
+  build-depends: containers < 0.7
   exposed-modules:
       Data.Loc
       Data.Loc.Area
