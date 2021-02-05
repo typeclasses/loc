@@ -7,13 +7,15 @@ module Data.Loc
     -- $imports
 
     -- * Core types
-    Line, Column, Loc, Span, Area,
+    Line, Column, Loc, Span, SpanOrLoc, Area,
 
     -- * Constructing
     -- ** Loc
     loc, origin,
     -- ** Span
     spanFromTo, spanFromToMay,
+    -- ** SpanOrLoc
+    spanOrLocFromTo,
     -- ** Area
     areaFromTo, spanArea,
 
@@ -22,6 +24,8 @@ module Data.Loc
     locLine, locColumn,
     -- ** Span
     spanStart, spanEnd,
+    -- ** SpanOrLoc
+    spanOrLocStart, spanOrLocEnd,
     -- ** Area
     areaStart, areaEnd, areaSpansAsc,
 
@@ -45,10 +49,12 @@ import Data.Loc.List.ZeroToTwo (ZeroToTwo)
 import Data.Loc.Loc (Loc)
 import Data.Loc.Pos (Column, Line, Pos, ToNat (..))
 import Data.Loc.Span (Span)
+import Data.Loc.SpanOrLoc (SpanOrLoc)
 
 import qualified Data.Loc.Area as Area
 import qualified Data.Loc.Loc as Loc
 import qualified Data.Loc.Span as Span
+import qualified Data.Loc.SpanOrLoc as SpanOrLoc
 
 {- |
 The smallest location: @'loc' 1 1@.
@@ -97,6 +103,25 @@ the result is 'Nothing', because a span cannot be empty.
 -}
 spanFromToMay :: Loc -> Loc -> Maybe Span
 spanFromToMay = Span.fromToMay
+
+{- |
+
+Construct a 'SpanOrLoc' from two 'Loc's. If the two locs are not equal,
+the lesser loc will be the start, and the greater loc will be the end.
+
+/This is an alias for 'SpanOrLoc.fromTo'./
+
+-}
+spanOrLocFromTo :: Loc -> Loc -> SpanOrLoc
+spanOrLocFromTo = SpanOrLoc.fromTo
+
+-- | /This is an alias for 'SpanOrLoc.start'./
+spanOrLocStart :: SpanOrLoc -> Loc
+spanOrLocStart = SpanOrLoc.start
+
+-- | /This is an alias for 'SpanOrLoc.end'./
+spanOrLocEnd :: SpanOrLoc -> Loc
+spanOrLocEnd = SpanOrLoc.end
 
 {- |
 Construct a contiguous 'Area' consisting of a single 'Span' specified by two

@@ -10,6 +10,7 @@ module Data.Loc.Types
     Column,
     Loc,
     Span,
+    SpanOrLoc,
     Area,
   )
   where
