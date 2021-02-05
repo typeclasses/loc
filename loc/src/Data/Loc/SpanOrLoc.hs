@@ -5,7 +5,9 @@ module Data.Loc.SpanOrLoc
   ( SpanOrLoc
 
   -- * Constructing
-  , span, loc
+  , span
+  , loc
+  , fromTo
 
   -- * Deconstructing
   , spanOrLoc
@@ -52,3 +54,13 @@ loc = Loc
 spanOrLoc :: (Span -> a) -> (Loc -> a) -> SpanOrLoc -> a
 spanOrLoc f _ (Span x) = f x
 spanOrLoc _ f (Loc x) = f x
+
+{- |
+
+Construct a 'SpanOrLoc' from two 'Loc's. If the two locs are not equal,
+the lesser loc will be the start, and the greater loc will be the end.
+
+-}
+fromTo :: Loc -> Loc -> SpanOrLoc
+fromTo a b =
+  maybe (Loc a) Span (Span.fromToMay a b)
