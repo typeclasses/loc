@@ -4,5 +4,6 @@ packages:
 
 constraints:
     base ^>= 4.11
-  , doctest ^>= 0.17
-  , hedgehog == 1.0.2
+  , containers ^>= 0.5.7.1
+  , doctest ^>= 0.16
+  , hedgehog == 1.0

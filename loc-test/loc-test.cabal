@@ -1,7 +1,7 @@
 cabal-version: 3.0
 
 name: loc-test
-version: 0.1.3.10
+version: 0.1.3.11
 
 synopsis: Test-related utilities related to the /loc/ package.
 
@@ -30,7 +30,7 @@ library
     ghc-options: -Wall
     exposed-modules: Test.Loc.Hedgehog.Gen
     build-depends:
-        base >= 4.9 && < 4.17
+        base >= 4.11 && < 4.17
       , containers >= 0.5.7.1 && < 0.7
       , hedgehog ^>= 1.0
       , loc ^>= 0.1.3

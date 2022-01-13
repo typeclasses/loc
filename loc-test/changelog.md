@@ -1,3 +1,7 @@
+Unreleased
+
+  - Drop support for GHC 8.0 and 8.2
+
 0.1.3.10 - 2022 Jan 13
 
   - Support GHC 9.0 and 9.2

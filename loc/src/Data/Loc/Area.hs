@@ -71,8 +71,6 @@ instance Monoid Area
 
     mempty = Area Map.empty
 
-    mappend = (+)
-
 -- | '<>' = '+'
 instance Semigroup Area
   where
