@@ -1,0 +1,6 @@
+packages:
+    loc
+    loc-test
+
+constraints:
+    base ^>= 4.12

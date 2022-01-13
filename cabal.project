@@ -1,2 +1,3 @@
-packages: loc/loc.cabal
-          loc-test/loc-test.cabal
+packages:
+    loc
+    loc-test

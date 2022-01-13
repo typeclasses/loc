@@ -1,5 +1,7 @@
+0.1.3.12 - 2022 Jan 13
 
----
+  - Support GHC 9.0 and 9.2
+  - Tighten dependency version bounds
 
 0.1.3.10 - 2020 Nov 4
 
