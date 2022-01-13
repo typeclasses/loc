@@ -33,4 +33,4 @@ library
         base >= 4.9 && < 4.17
       , containers >= 0.5.7.1 && < 0.7
       , hedgehog ^>= 1.0
-      , loc
+      , loc ^>= 0.1.3
