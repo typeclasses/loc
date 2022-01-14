@@ -1,3 +1,7 @@
+0.1.3.16 - 2022 Jan 24
+
+  - Fix test suite failure on case-insensitive file systems
+
 0.1.3.14 - 2022 Jan 13
 
   - Drop support for GHC 8.0 and 8.2
