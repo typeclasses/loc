@@ -67,5 +67,5 @@ test-suite hedgehog
     type: exitcode-stdio-1.0
     main-is: test-with-hedgehog.hs
     hs-source-dirs: loc-test-src
-    build-depends: hedgehog ^>= 1.0
+    build-depends: hedgehog ^>= 1.0 || ^>= 1.1
     other-modules: Test.Loc.Hedgehog.Gen
