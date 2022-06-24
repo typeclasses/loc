@@ -1,0 +1,1 @@
+- Drop support for GHC 8.0 and 8.2
