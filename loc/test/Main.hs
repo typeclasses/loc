@@ -1,5 +1,7 @@
 {-# LANGUAGE TemplateHaskell #-}
 
+module Main (main) where
+
 import Data.Loc
 import Data.Loc.Internal.Prelude
 
@@ -7,19 +9,15 @@ import qualified Data.Loc.Area as Area
 import qualified Data.Loc.Span as Span
 
 import Hedgehog
-import System.IO (hSetEncoding, stdout, stderr, utf8)
 
 import qualified Data.List as List
+import qualified Hedgehog.Main as Hedgehog
 import qualified Hedgehog.Gen as Gen
 import qualified Hedgehog.Range as Range
 import qualified Test.Loc.Hedgehog.Gen as Gen
 
 main :: IO ()
-main =
-  hSetEncoding stdout utf8 *>
-  hSetEncoding stderr utf8 *>
-  checkParallel $$discover >>= \ok ->
-  when (not ok) exitFailure
+main = Hedgehog.defaultMain [ checkParallel ( $$discover ) ]
 
 prop_Span_add_mempty :: Property
 prop_Span_add_mempty =

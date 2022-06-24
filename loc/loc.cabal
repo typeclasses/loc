@@ -57,10 +57,10 @@ library
         Data.Loc.Span
         Data.Loc.Types
 
-test-suite hedgehog
+test-suite test-loc-properties
     import: test
     type: exitcode-stdio-1.0
-    main-is: test-with-hedgehog.hs
+    main-is: Main.hs
     hs-source-dirs: loc-test-src
     build-depends: hedgehog ^>= 1.0.2 || ^>= 1.1
     other-modules: Test.Loc.Hedgehog.Gen
