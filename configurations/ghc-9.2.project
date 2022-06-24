@@ -3,6 +3,5 @@ packages:
     loc-test
 
 constraints:
-    base ^>= 4.16
-  , hedgehog ^>= 1.1
-  , doctest ^>= 0.20
+    base == 4.16.*
+  , hedgehog == 1.1.*

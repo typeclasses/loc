@@ -1,8 +1,0 @@
-packages:
-    loc
-    loc-test
-
-constraints:
-    base ^>= 4.12
-  , doctest ^>= 0.17
-  , hedgehog == 1.0.2

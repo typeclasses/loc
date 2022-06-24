@@ -29,7 +29,7 @@ library
     ghc-options: -Wall
     exposed-modules: Test.Loc.Hedgehog.Gen
     build-depends:
-        base >= 4.11 && < 4.17
-      , containers >= 0.5.7.1 && < 0.7
-      , hedgehog ^>= 1.0 || ^>= 1.1
+        base >= 4.14 && < 4.17
+      , containers >= 0.6.5.1 && < 0.7
+      , hedgehog ^>= 1.0.2 || ^>= 1.1
       , loc ^>= 0.1.3

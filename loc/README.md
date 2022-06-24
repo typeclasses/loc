@@ -136,8 +136,7 @@ along with a tag indicating whether each is a start or an end.
 
 ## `Show`
 
-We define custom `Show` and `Read` instances to be able to write terse
-[doctests](https://hackage.haskell.org/package/doctest) like
+We define custom `Show` and `Read` instances to be able to write terse tests like:
 
 ```haskell
 >>> addSpan (read "1:1-6:1") (read "[1:1-3:1,6:1-6:2,7:4-7:5]")
