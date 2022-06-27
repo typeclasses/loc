@@ -7,25 +7,25 @@ Hedgehog generators for types defined in the /loc/ package.
 -}
 module Test.Loc.Hedgehog.Gen
   (
-  -- * Line
-    line, line', defMaxLine
+    -- * Line
+    line, line', defMaxLine,
 
-  -- * Column
-  , column, column', defMaxColumn
+    -- * Column
+    column, column', defMaxColumn,
 
-  -- * Loc
-  , loc, loc'
+    -- * Loc
+    loc, loc',
 
-  -- * Span
-  , span, span'
+    -- * Span
+    span, span',
 
-  -- * Area
-  , area, area'
+    -- * Area
+    area, area',
 
-  -- * Generator bounds
-  , Bounds, boundsSize
-
-  ) where
+    -- * Generator bounds
+    Bounds, boundsSize,
+  )
+  where
 
 import Data.Loc (ToNat (..))
 import Data.Loc.Internal.Prelude

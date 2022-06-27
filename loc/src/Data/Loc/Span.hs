@@ -2,31 +2,25 @@
 {-# LANGUAGE LambdaCase #-}
 
 module Data.Loc.Span
-  ( Span
+  (
+    Span,
 
-  -- * Constructing
-  , fromTo
-  , fromToMay
+    -- * Constructing
+    fromTo, fromToMay,
 
-  -- * Querying
-  , start
-  , end
+    -- * Querying
+    start, end,
 
-  -- * Calculations
-  , lines
-  , overlapping
-  , linesOverlapping
-  , touching
-  , join
-  , joinAsc
-  , (+)
-  , (-)
+    -- * Calculations
+    lines,
+    overlapping, linesOverlapping, touching,
+    join, joinAsc,
+    (+), (-),
 
-  -- * Show and Read
-  , spanShowsPrec
-  , spanReadPrec
-
-  ) where
+    -- * Show and Read
+    spanShowsPrec, spanReadPrec,
+  )
+  where
 
 import Data.Loc.Internal.Prelude
 

@@ -1,8 +1,10 @@
 module Data.Loc.Internal.Prelude
-  ( module X
-  , (<&>)
-  , readPrecChar
-  ) where
+  (
+    module X,
+    (<&>),
+    readPrecChar,
+  )
+  where
 
 import Control.Applicative as X (empty, pure, (*>), (<*), (<*>))
 import Control.Arrow as X ((<<<), (>>>))

@@ -1,7 +1,9 @@
 module Data.Loc.Internal.Map
-  ( module Data.Map
-  , below, above, belowInclusive, aboveInclusive
-  ) where
+  (
+    module Data.Map,
+    below, above, belowInclusive, aboveInclusive,
+  )
+  where
 
 import Data.Loc.Internal.Prelude
 

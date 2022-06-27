@@ -1,40 +1,40 @@
 module Data.Loc
   (
-  -- * Concepts
-  -- $concepts
+    -- * Concepts
+    -- $concepts
 
-  -- * Imports
-  -- $imports
+    -- * Imports
+    -- $imports
 
-  -- * Core types
-    Line, Column, Loc, Span, Area
+    -- * Core types
+    Line, Column, Loc, Span, Area,
 
-  -- * Constructing
-  -- ** Loc
-  , loc, origin
-  -- ** Span
-  , spanFromTo, spanFromToMay
-  -- ** Area
-  , areaFromTo, spanArea
+    -- * Constructing
+    -- ** Loc
+    loc, origin,
+    -- ** Span
+    spanFromTo, spanFromToMay,
+    -- ** Area
+    areaFromTo, spanArea,
 
-  -- * Deconstructing
-  -- ** Loc
-  , locLine, locColumn
-  -- ** Span
-  , spanStart, spanEnd
-  -- ** Area
-  , areaStart, areaEnd, areaSpansAsc
+    -- * Deconstructing
+    -- ** Loc
+    locLine, locColumn,
+    -- ** Span
+    spanStart, spanEnd,
+    -- ** Area
+    areaStart, areaEnd, areaSpansAsc,
 
-  -- * Combining
-  -- ** Span
-  , spanUnion, spanDifference
-  -- ** Area
-  , areaUnion, areaDifference
+    -- * Combining
+    -- ** Span
+    spanUnion, spanDifference,
+    -- ** Area
+    areaUnion, areaDifference,
 
-  -- * Miscellaneous
-  , Pos, OneToTwo, ZeroToTwo, ToNat (..), LocException (..)
-
-  ) where
+    -- * Miscellaneous
+    Pos, OneToTwo, ZeroToTwo, ToNat (..), LocException (..),
+  )
+  where
 
 import Data.Loc.Internal.Prelude
 

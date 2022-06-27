@@ -2,12 +2,13 @@
 
 module Data.Loc.List.ZeroToTwo
   (
-  -- Imports
-  -- $imports
+    -- Imports
+    -- $imports
 
-  -- * Type
-    ZeroToTwo (..)
-  ) where
+    -- * Type
+    ZeroToTwo (..),
+  )
+  where
 
 import Data.Loc.Internal.Prelude
 

@@ -2,16 +2,16 @@
 
 module Data.Loc.List.OneToTwo
   (
-  -- * Imports
-  -- $imports
+    -- * Imports
+    -- $imports
 
-  -- * Type
-    OneToTwo (..)
+    -- * Type
+    OneToTwo (..),
 
-  -- * Tuple conversion
-  , toTuple
-  , toTuple'
-  ) where
+    -- * Tuple conversion
+    toTuple, toTuple',
+  )
+  where
 
 import Data.Loc.Internal.Prelude
 

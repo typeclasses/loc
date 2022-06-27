@@ -2,16 +2,13 @@
 {-# LANGUAGE GeneralizedNewtypeDeriving #-}
 
 module Data.Loc.Pos
-  ( Pos
-  , Line
-  , Column
-  , ToNat (..)
+  (
+    Pos, Line, Column, ToNat (..),
 
-  -- * Show and Read
-  , posShowsPrec
-  , posReadPrec
-
-  ) where
+    -- * Show and Read
+    posShowsPrec, posReadPrec,
+  )
+  where
 
 import Data.Loc.Internal.Prelude
 

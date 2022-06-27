@@ -2,31 +2,24 @@
 {-# LANGUAGE ScopedTypeVariables #-}
 
 module Data.Loc.Area
-  ( Area
+  (
+    Area,
 
-  -- * Constructing
-  , fromTo
-  , spanArea
+    -- * Constructing
+    fromTo, spanArea,
 
-  -- * Combining
-  , (+)
-  , (-)
-  , addSpan
+    -- * Combining
+    (+), (-), addSpan,
 
-  -- * Querying
-  , firstSpan
-  , lastSpan
-  , start
-  , end
-  , areaSpan
-  , spansAsc
-  , spanCount
+    -- * Querying
+    firstSpan, lastSpan,
+    start, end,
+    areaSpan, spansAsc, spanCount,
 
-  -- * Show and Read
-  , areaShowsPrec
-  , areaReadPrec
-
-  ) where
+    -- * Show and Read
+    areaShowsPrec, areaReadPrec,
+  )
+  where
 
 import Data.Loc.Internal.Prelude
 

@@ -1,19 +1,17 @@
 {-# LANGUAGE DeriveDataTypeable #-}
 
 module Data.Loc.Loc
-  ( Loc
+  (
+    Loc,
 
-  -- * Constructing
-  , loc
-  , origin
+    -- * Constructing
+    loc, origin,
 
-  -- * Querying
-  , line
-  , column
+    -- * Querying
+    line, column,
 
-  -- * Show and Read
-  , locShowsPrec
-  , locReadPrec
+    -- * Show and Read
+    locShowsPrec, locReadPrec,
 
   ) where
 
