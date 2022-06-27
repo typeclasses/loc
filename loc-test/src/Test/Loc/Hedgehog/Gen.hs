@@ -1,5 +1,3 @@
-{-# LANGUAGE ScopedTypeVariables #-}
-
 {- |
 
 Hedgehog generators for types defined in the /loc/ package.

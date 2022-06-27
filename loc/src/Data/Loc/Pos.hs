@@ -1,6 +1,3 @@
-{-# LANGUAGE DeriveDataTypeable #-}
-{-# LANGUAGE GeneralizedNewtypeDeriving #-}
-
 module Data.Loc.Pos
   (
     Pos, Line, Column, ToNat (..),

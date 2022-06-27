@@ -1,5 +1,3 @@
-{-# LANGUAGE DeriveFoldable, DeriveFunctor #-}
-
 module Data.Loc.List.ZeroToTwo
   (
     -- Imports

@@ -1,5 +1,3 @@
-{-# LANGUAGE DeriveFoldable, DeriveFunctor, LambdaCase #-}
-
 module Data.Loc.List.OneToTwo
   (
     -- * Imports

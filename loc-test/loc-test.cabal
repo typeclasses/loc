@@ -25,7 +25,7 @@ build-type: Simple
 library
     default-language: Haskell2010
     hs-source-dirs: src
-    default-extensions: NoImplicitPrelude
+    default-extensions: NoImplicitPrelude ScopedTypeVariables
     ghc-options: -Wall
     exposed-modules: Test.Loc.Hedgehog.Gen
     build-depends:
