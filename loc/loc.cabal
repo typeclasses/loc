@@ -13,7 +13,7 @@ description:
     the @Span@ type is a nonempty range between two @Loc@s,
     and the @Area@ type is a set of non-touching @Span@s.
 
-category: Data Structures
+category: Data Structures, Text
 
 homepage: https://github.com/typeclasses/loc
 
