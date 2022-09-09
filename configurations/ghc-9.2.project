@@ -4,4 +4,4 @@ packages:
 
 constraints:
     base == 4.16.*
-  , hedgehog == 1.1.*
+  , hedgehog == 1.2.*

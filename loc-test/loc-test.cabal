@@ -31,5 +31,5 @@ library
     build-depends:
         base >= 4.14 && < 4.17
       , containers >= 0.6.5.1 && < 0.7
-      , hedgehog ^>= 1.0.2 || ^>= 1.1
+      , hedgehog ^>= 1.0.2 || ^>= 1.1 || ^>= 1.2
       , loc ^>= 0.1.3
