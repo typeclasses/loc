@@ -1,29 +1,4 @@
-{- |
-
-Hedgehog generators for types defined in the /loc/ package.
-
--}
-module Test.Loc.Hedgehog.Gen
-  (
-    -- * Line
-    line, line', defMaxLine,
-
-    -- * Column
-    column, column', defMaxColumn,
-
-    -- * Loc
-    loc, loc',
-
-    -- * Span
-    span, span',
-
-    -- * Area
-    area, area',
-
-    -- * Generator bounds
-    Bounds, boundsSize,
-  )
-  where
+module Gen where
 
 import Data.Loc (ToNat (..))
 import Data.Loc.Internal.Prelude
@@ -68,8 +43,7 @@ Assumes the upper bound is at least the lower bound.
 
 -}
 boundsSize :: Num n => (n, n) -> n
-boundsSize (a, b) =
-  1 + b - a
+boundsSize (a, b) = 1 + b - a
 
 
 --------------------------------------------------------------------------------
@@ -81,23 +55,21 @@ boundsSize (a, b) =
 @'pos' a b@ generates a number on the linear range /a/ to /b/.
 
 -}
-pos :: (ToNat n, Num n)
-  => Bounds n -- ^ Minimum and maximum value to generate
-  -> Gen n
-pos (a, b) =
-  let
+pos :: (ToNat n, Num n) =>
+    Bounds n -- ^ Minimum and maximum value to generate
+    -> Gen n
+pos (a, b) = fromInteger . toInteger <$> Gen.integral range
+  where
     range = Range.linear (toNat a) (toNat b)
-  in
-    fromInteger . toInteger <$> Gen.integral range
 
 {- |
 
 @'line' a b@ generates a line number on the linear range /a/ to /b/.
 
 -}
-line
-  :: Bounds Line -- ^ Minimum and maximum line number
-  -> Gen Line
+line ::
+    Bounds Line -- ^ Minimum and maximum line number
+    -> Gen Line
 line = pos
 
 {- |
@@ -106,17 +78,16 @@ Generates a line number within the default bounds @(1, 'defMaxLine')@.
 
 -}
 line' :: Gen Line
-line' =
-  line (1, defMaxLine)
+line' = line (1, defMaxLine)
 
 {- |
 
 @'column' a b@ generates a column number on the linear range /a/ to /b/.
 
 -}
-column
-  :: Bounds Column -- ^ Minimum and maximum column number
-  -> Gen Column
+column ::
+    Bounds Column -- ^ Minimum and maximum column number
+    -> Gen Column
 column = pos
 
 {- |
@@ -125,8 +96,7 @@ Generates a column number within the default bounds @(1, 'defMaxColumn')@.
 
 -}
 column' :: Gen Column
-column' =
-  column (1, defMaxColumn)
+column' = column (1, defMaxColumn)
 
 
 --------------------------------------------------------------------------------
@@ -139,13 +109,12 @@ column' =
 bounded by @lineBounds@ and column number bounded by @columnBounds@.
 
 -}
-loc
-  :: Bounds Line   -- ^ Minimum and maximum line number
-  -> Bounds Column -- ^ Minimum and maximum column number
-  -> Gen Loc
+loc ::
+    Bounds Line -- ^ Minimum and maximum line number
+    -> Bounds Column -- ^ Minimum and maximum column number
+    -> Gen Loc
 loc lineBounds columnBounds =
-  Loc.loc <$> line   lineBounds
-          <*> column columnBounds
+    Loc.loc <$> line lineBounds <*> column columnBounds
 
 {- |
 
@@ -153,8 +122,7 @@ Generates a 'Loc' within the default line and column bounds.
 
 -}
 loc' :: Gen Loc
-loc' =
-  loc (1, defMaxLine) (1, defMaxColumn)
+loc' = loc (1, defMaxLine) (1, defMaxColumn)
 
 
 --------------------------------------------------------------------------------
@@ -168,10 +136,10 @@ positions whose line numbers are bounded by @lineBounds@ and whose column
 numbers are bounded by @columnBounds@.
 
 -}
-span
-  :: Bounds Line   -- ^ Minimum and maximum line number
-  -> Bounds Column -- ^ Minimum and maximum column number
-  -> Gen Span
+span ::
+    Bounds Line -- ^ Minimum and maximum line number
+    -> Bounds Column -- ^ Minimum and maximum column number
+    -> Gen Span
 span lineBounds columnBounds@(minColumn, maxColumn) =
   let
     lines :: Gen (Line, Line)
@@ -216,8 +184,7 @@ column bounds.
 
 -}
 span' :: Gen Span
-span' =
-  span (1, defMaxLine) (1, defMaxColumn)
+span' = span (1, defMaxLine) (1, defMaxColumn)
 
 
 --------------------------------------------------------------------------------
@@ -231,10 +198,10 @@ with start and end positions whose line numbers are bounded by @lineBounds@
 and whose column numbers are bounded by @columnBounds@.
 
 -}
-area
-  :: Bounds Line   -- ^ Minimum and maximum line number
-  -> Bounds Column -- ^ Minimum and maximum column number
-  -> Gen Area
+area ::
+    Bounds Line   -- ^ Minimum and maximum line number
+    -> Bounds Column -- ^ Minimum and maximum column number
+    -> Gen Area
 area lineBounds columnBounds =
     fold . snd . mapAccumL f Nothing . Set.toAscList . Set.fromList <$> locs
 
@@ -261,5 +228,4 @@ the default line and column bounds.
 
 -}
 area' :: Gen Area
-area' =
-  area (1, defMaxLine) (1, defMaxColumn)
+area' = area (1, defMaxLine) (1, defMaxColumn)

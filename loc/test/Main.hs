@@ -17,7 +17,7 @@ import Test.Hspec.Hedgehog
 import qualified Data.List as List
 import qualified Hedgehog.Gen as Gen
 import qualified Hedgehog.Range as Range
-import qualified Test.Loc.Hedgehog.Gen as Gen
+import qualified Gen
 
 import Prelude (fromInteger, ($!), Num (..))
 

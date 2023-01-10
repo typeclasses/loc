@@ -1,4 +1,5 @@
-# loc
+The package name *loc* stands for “location” and is
+also an allusion to the acronym for “lines of code”.
 
 Overview of the concepts:
 

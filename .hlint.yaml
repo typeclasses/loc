@@ -1,5 +1,0 @@
-- ignore: { name: Use unless }
-- ignore: { name: Use tuple-section }
-
-# https://github.com/ndmitchell/hlint/issues/436
-- ignore: { name: Unused LANGUAGE pragma, within: [Main] }

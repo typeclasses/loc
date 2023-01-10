@@ -1,8 +1,0 @@
-packages:
-    loc
-    loc-test
-
-constraints:
-    base == 4.14.*
-  , containers == 0.6.5.1
-  , hedgehog == 1.0.2

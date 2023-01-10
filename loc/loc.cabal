@@ -1,10 +1,9 @@
 cabal-version: 3.0
 
 name: loc
-version: 0.1.4.0
-x-revision: 1
-
-synopsis: Types representing line and column positions and ranges in text files.
+version: 0.1.4.1
+synopsis: Line and column positions and ranges in text files
+category: Data Structures, Text
 
 description:
     The package name /loc/ stands for “location” and is
@@ -14,9 +13,8 @@ description:
     the @Span@ type is a nonempty range between two @Loc@s,
     and the @Area@ type is a set of non-touching @Span@s.
 
-category: Data Structures, Text
-
-homepage: https://github.com/typeclasses/loc
+homepage:    https://github.com/typeclasses/loc
+bug-reports: https://github.com/typeclasses/loc/issues
 
 author: Chris Martin
 maintainer: Chris Martin, Julie Moronuki
@@ -25,9 +23,12 @@ copyright: 2017 Mission Valley Software LLC
 license: Apache-2.0
 license-file: license.txt
 
-build-type: Simple
+extra-source-files: *.md
+extra-doc-files: *.png, *.svg
 
-extra-source-files: example.png example.svg README.md
+source-repository head
+    type: git
+    location: git://github.com/typeclasses/loc.git
 
 common base
     default-language: Haskell2010
@@ -41,14 +42,9 @@ common base
         NoImplicitPrelude
         ScopedTypeVariables
     ghc-options: -Wall
-    build-depends: base >= 4.14 && < 4.17
-    build-depends: containers >= 0.6.5.1 && < 0.7
-
-common test
-    import: base
-    hs-source-dirs: test
-    ghc-options: -threaded
-    build-depends: loc
+    build-depends:
+      , base ^>= 4.14 || ^>= 4.15 || ^>= 4.16 || ^>= 4.17
+      , containers ^>= 0.6.4
 
 library
     import: base
@@ -68,13 +64,15 @@ library
         Data.Loc.Types
 
 test-suite test-loc-properties
-    import: test
+    import: base
     type: exitcode-stdio-1.0
+    hs-source-dirs: test
+    ghc-options: -threaded
     default-extensions: TemplateHaskell
     main-is: Main.hs
-    hs-source-dirs: loc-test-src
-    other-modules: Test.Loc.Hedgehog.Gen
+    other-modules: Gen
     build-depends:
-        hspec
-      , hspec-hedgehog
-      , hedgehog ^>= 1.0.2 || ^>= 1.1 || ^>= 1.2
+      , hspec ^>= 2.8.5 || ^>= 2.9 || ^>= 2.10
+      , hspec-hedgehog ^>= 0.0.1
+      , hedgehog ^>= 1.0.5 || ^>= 1.1 || ^>= 1.2
+      , loc
