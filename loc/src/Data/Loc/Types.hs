@@ -1,11 +1,6 @@
-{- |
-
-For convenience, this module exports only the important types from 'Data.Loc'.
-
--}
+-- | For convenience, this module exports only the important types from 'Data.Loc'
 module Data.Loc.Types
-  (
-    Pos,
+  ( Pos,
     Line,
     Column,
     Loc,
@@ -13,6 +8,6 @@ module Data.Loc.Types
     SpanOrLoc,
     Area,
   )
-  where
+where
 
 import Data.Loc

@@ -1,10 +1,9 @@
 module Data.Loc.Internal.Prelude
-  (
-    module X,
+  ( module X,
     (<&>),
     readPrecChar,
   )
-  where
+where
 
 import Control.Applicative as X (empty, pure, (*>), (<*), (<*>))
 import Control.Arrow as X ((<<<), (>>>))
@@ -27,22 +26,38 @@ import Data.Set as X (Set)
 import Data.Traversable as X (mapAccumL, sequenceA, traverse)
 import Data.Tuple as X (fst, snd)
 import Numeric.Natural as X (Natural)
-import Prelude as X (Double, Enum (..), Int, Integral, Real (..), String, div,
-                     fromIntegral, print, quotRem, round, sqrt, toInteger,
-                     undefined, (/))
 import System.Exit as X (exitFailure)
 import System.IO as X (IO)
-import Text.ParserCombinators.ReadPrec as X (minPrec, readP_to_Prec,
-                                             readPrec_to_S)
+import Text.ParserCombinators.ReadP qualified as ReadP
+import Text.ParserCombinators.ReadPrec as X
+  ( minPrec,
+    readP_to_Prec,
+    readPrec_to_S,
+  )
 import Text.Read as X (Read (..), ReadPrec, read)
 import Text.Show as X (Show (..), ShowS, showString, shows)
-
-import qualified Text.ParserCombinators.ReadP as ReadP
+import Prelude as X
+  ( Double,
+    Enum (..),
+    Int,
+    Integral,
+    Real (..),
+    String,
+    div,
+    fromIntegral,
+    print,
+    quotRem,
+    round,
+    sqrt,
+    toInteger,
+    undefined,
+    (/),
+  )
 
 -- | '<&>' = flip 'fmap'
 (<&>) :: Functor f => f a -> (a -> b) -> f b
 (<&>) = flip fmap
 
--- | A precedence parser that reads a single specific character.
+-- | A precedence parser that reads a single specific character
 readPrecChar :: Char -> ReadPrec ()
 readPrecChar = void . readP_to_Prec . const . ReadP.char

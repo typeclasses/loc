@@ -1,8 +1,7 @@
 module Data.Loc.Exception
-  (
-    LocException (..),
+  ( LocException (..),
   )
-  where
+where
 
 import Data.Loc.Internal.Prelude
 
