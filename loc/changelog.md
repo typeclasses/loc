@@ -1,3 +1,14 @@
+### 0.2.0.0 (2023-06-26)
+
+Remove `Pos` type; using `Positive` from the `integer-types` package instead
+
+Remove `ToNat` class
+
+Removed all `Data` instances. (Because I don't care; if you need this, ask
+for it to be restored.)
+
+`Line` and `Column` now have `Integral` instances
+
 ### 0.1.4.1 (2023-01-10)
 
 Support GHC 9.4

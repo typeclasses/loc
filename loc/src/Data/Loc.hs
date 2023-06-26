@@ -60,10 +60,9 @@ module Data.Loc
     areaDifference,
 
     -- * Miscellaneous
-    Pos,
+    Positive,
     OneToTwo,
     ZeroToTwo,
-    ToNat (..),
     LocException (..),
   )
 where
@@ -76,11 +75,12 @@ import Data.Loc.List.OneToTwo (OneToTwo)
 import Data.Loc.List.ZeroToTwo (ZeroToTwo)
 import Data.Loc.Loc (Loc)
 import Data.Loc.Loc qualified as Loc
-import Data.Loc.Pos (Column, Line, Pos, ToNat (..))
+import Data.Loc.Pos (Column, Line)
 import Data.Loc.Span (Span)
 import Data.Loc.Span qualified as Span
 import Data.Loc.SpanOrLoc (SpanOrLoc)
 import Data.Loc.SpanOrLoc qualified as SpanOrLoc
+import Integer.Positive (Positive)
 
 -- | The smallest location: @'loc' 1 1@
 --

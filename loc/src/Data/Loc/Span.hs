@@ -25,7 +25,6 @@ module Data.Loc.Span
   )
 where
 
-import Data.Data (Data)
 import Data.Foldable qualified as Foldable
 import Data.List.NonEmpty qualified as NonEmpty
 import Data.Loc.Exception (LocException (..))
@@ -48,7 +47,7 @@ data Span = Span
   { start :: Loc,
     end :: Loc
   }
-  deriving (Data, Eq, Ord)
+  deriving (Eq, Ord)
 
 -- | 'showsPrec' = 'spanShowsPrec'
 instance Show Span where

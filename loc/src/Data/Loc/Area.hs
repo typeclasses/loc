@@ -25,7 +25,6 @@ module Data.Loc.Area
   )
 where
 
-import Data.Data (Data)
 import Data.Foldable qualified as Foldable
 import Data.Loc.Internal.Map qualified as Map
 import Data.Loc.Internal.Prelude
@@ -35,7 +34,7 @@ import Data.Loc.Span qualified as Span
 import Data.Set qualified as Set
 
 data Terminus = Start | End
-  deriving (Data, Eq, Ord)
+  deriving (Eq, Ord)
 
 -- | A set of non-overlapping, non-abutting 'Span's
 --
@@ -43,7 +42,7 @@ data Terminus = Start | End
 --
 -- Construct and combine areas using 'mempty', 'spanArea', 'fromTo', '+', and '-'.
 newtype Area = Area (Map Loc Terminus)
-  deriving (Data, Eq, Ord)
+  deriving (Eq, Ord)
 
 -- | 'showsPrec' = 'areaShowsPrec'
 instance Show Area where

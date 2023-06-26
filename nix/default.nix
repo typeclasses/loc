@@ -27,14 +27,20 @@ let
     rec {
       ghc-9-2 = makeTestConfiguration {
         ghcVersion = "ghc92";
+        overrides = new: old: {
+          integer-types = new.callPackage ./haskell/integer-types.nix { };
+        };
       };
       ghc-9-4 = makeTestConfiguration {
         ghcVersion = "ghc94";
+        overrides = new: old: {
+          integer-types = new.callPackage ./haskell/integer-types.nix { };
+        };
       };
       ghc-9-6 = makeTestConfiguration {
         ghcVersion = "ghc96";
         overrides = new: old: {
-          ascii-char = new.callPackage ./haskell/ascii-char.nix { };
+          integer-types = new.callPackage ./haskell/integer-types.nix { };
         };
       };
       all = pkgs.symlinkJoin {

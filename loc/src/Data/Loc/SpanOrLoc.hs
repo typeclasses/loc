@@ -15,7 +15,6 @@ module Data.Loc.SpanOrLoc
   )
 where
 
-import Data.Data (Data)
 import Data.Loc.Internal.Prelude
 import Data.Loc.Loc (Loc)
 import Data.Loc.Loc qualified as Loc
@@ -30,7 +29,7 @@ import Data.Loc.Span qualified as Span
 -- If the start and end location are the same, then the value is a 'Loc'.
 -- If they differ, then the value is a 'Span'.
 data SpanOrLoc = Span Span | Loc Loc
-  deriving (Data, Eq, Ord)
+  deriving (Eq, Ord)
 
 instance Show SpanOrLoc where
   showsPrec i = \case

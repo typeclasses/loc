@@ -15,9 +15,9 @@ module Data.Loc.Loc
   )
 where
 
-import Data.Data (Data)
 import Data.Loc.Internal.Prelude
 import Data.Loc.Pos (Column, Line)
+import Integer.Positive (Positive)
 
 -- | Stands for /location/, consists of a 'Line' and a 'Column'
 --
@@ -28,7 +28,7 @@ data Loc = Loc
   { line :: Line,
     column :: Column
   }
-  deriving (Data, Eq, Ord)
+  deriving (Eq, Ord)
 
 -- | 'showsPrec' = 'locShowsPrec'
 instance Show Loc where
@@ -55,9 +55,9 @@ locShowsPrec _ (Loc l c) =
 locReadPrec :: ReadPrec Loc
 locReadPrec =
   Loc
-    <$> readPrec
+    <$> (fromIntegral <$> readPrec @Positive)
     <* readPrecChar ':'
-    <*> readPrec
+    <*> (fromIntegral <$> readPrec @Positive)
 
 -- | Create a 'Loc' from a line number and column number.
 loc :: Line -> Column -> Loc

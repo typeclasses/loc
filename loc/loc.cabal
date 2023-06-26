@@ -1,7 +1,7 @@
 cabal-version: 3.0
 
 name: loc
-version: 0.1.4.1
+version: 0.2.0.0
 synopsis: Line and column positions and ranges in text files
 category: Data Structures, Text
 
@@ -34,12 +34,14 @@ common base
     default-language: GHC2021
     default-extensions:
         BlockArguments
+        DerivingStrategies
         LambdaCase
         NoImplicitPrelude
     ghc-options: -Wall
     build-depends:
       , base ^>= 4.16 || ^>= 4.17 || ^>= 4.18
       , containers ^>= 0.6.4
+      , integer-types ^>= 0.1.2
 
 library
     import: base

@@ -8,7 +8,6 @@ import Data.Loc.Internal.Prelude
 import Data.Loc.List.OneToTwo qualified as OneToTwo
 import Data.Loc.List.ZeroToTwo qualified as ZeroToTwo
 import Data.Loc.Loc qualified as Loc
-import Data.Loc.Pos qualified as Pos
 import Data.Loc.Span qualified as Span
 import Gen qualified
 import Hedgehog
@@ -16,33 +15,12 @@ import Hedgehog.Gen qualified as Gen
 import Hedgehog.Range qualified as Range
 import Test.Hspec
 import Test.Hspec.Hedgehog
-import Prelude (Num (..), fromInteger, ($!))
 
 main :: IO ()
 main = hspec do
-  posSpec
   locSpec
   spanSpec
   areaSpec
-
-posSpec :: SpecWith ()
-posSpec = describe "Pos" do
-  specify "fromInteger" $ (fromInteger 3 :: Pos) == 3
-  specify "fromInteger underflow" $ (return $! (fromInteger 0 :: Pos)) `shouldThrow` (== Underflow)
-  specify "2 + 3" $ (2 + 3 :: Pos) == 5
-  specify "3 - 2" $ (3 - 2 :: Pos) == 1
-  specify "(-) underflow" $ (return $! (3 - 3 :: Pos)) `shouldThrow` (== Underflow)
-  specify "2 * 3" $ (2 * 3 :: Pos) == 6
-  specify "negate underflow" $ (return $! (negate 3 :: Pos)) `shouldThrow` (== Underflow)
-  specify "toEnum" $ (toEnum 3 :: Pos) == 3
-  specify "toEnum underflow" $ (return $! (toEnum 0 :: Pos)) `shouldThrow` (== Underflow)
-  specify "fromEnum" $ fromEnum (3 :: Pos) == 3
-  specify "show 1" $ Pos.posShowsPrec minPrec 1 "" == "1"
-  specify "show 42" $ Pos.posShowsPrec minPrec 42 "" == "42"
-  specify "read 1" $ readPrec_to_S Pos.posReadPrec minPrec "1" == [(1, "")]
-  specify "read 42" $ readPrec_to_S Pos.posReadPrec minPrec "42" == [(42, "")]
-  specify "read 0" $ readPrec_to_S Pos.posReadPrec minPrec "0" == []
-  specify "read -1" $ readPrec_to_S Pos.posReadPrec minPrec "-1" == []
 
 locSpec :: SpecWith ()
 locSpec = describe "Loc" do
